@@ -7,19 +7,13 @@ from .serializers import TodoSerializer
 from rest_framework import status
 from rest_framework import generics, mixins
 from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
+from rest_framework.viewsets import ModelViewSet
 
 
-
-class TodoListApiView(ListCreateAPIView):
+class TodoApiView(ModelViewSet):
     queryset = Todo.objects.order_by('priority').all()
     serializer_class = TodoSerializer
 
-
-class TodoDetailApiView(RetrieveUpdateDestroyAPIView):
-    queryset = Todo.objects.order_by('priority').all()
-    serializer_class = TodoSerializer
-    
-    
         
         
         
