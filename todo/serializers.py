@@ -9,7 +9,7 @@ class CategorySerializer(ModelSerializer):
     
 
 class TodoSerializer(ModelSerializer):
-    
+    Category = CategorySerializer(read_only=True, many=True)
     
     class Meta:
         model = Todo
