@@ -7,8 +7,13 @@ app_name = 'todos'
 
 router = DefaultRouter()
 
+router.register('categorys', CategoryApiVIew)
+
 router.register('', TodoApiView)
 
+
 urlpatterns = [
-    path('', include(router.urls), name='api'),
+    path('', include(router.urls), name='todo_api'),
+    path('', include(router.urls), name='category_api'),
+    
 ]
