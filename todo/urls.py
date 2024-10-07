@@ -13,7 +13,6 @@ router.register('', TodoApiView)
 
 
 urlpatterns = [
-    path('', include(router.urls), name='todo_api'),
-    path('', include(router.urls), name='category_api'),
+    path('', include(router.urls), name='api'),
     
 ]
