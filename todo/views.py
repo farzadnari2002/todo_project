@@ -9,6 +9,8 @@ from rest_framework import generics, mixins
 from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
 from rest_framework.viewsets import ModelViewSet
 from rest_framework.pagination import LimitOffsetPagination
+from rest_framework.authentication import BasicAuthentication
+from rest_framework.permissions import IsAuthenticated
 
 
 class CategoryApiViewPagination(LimitOffsetPagination):
@@ -18,6 +20,8 @@ class CategoryApiViewPagination(LimitOffsetPagination):
 class TodoApiView(ModelViewSet):
     queryset = Todo.objects.order_by('priority').all()
     serializer_class = TodoSerializer
+    authentication_classes = [BasicAuthentication]
+    permission_classes = [IsAuthenticated]
 
     
     
