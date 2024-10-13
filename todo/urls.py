@@ -11,7 +11,6 @@ router.register('categorys', CategoryApiVIew)
 
 router.register('', TodoApiView)
 
-
 urlpatterns = [
     path('', include(router.urls), name='api'),
     
